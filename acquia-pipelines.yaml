@@ -43,7 +43,7 @@ events:
           type: deploy
           script:
             - sleep 10
-            - echo "Pr-Merged event script"
+            - echo "Pr-Merged event script."
             - pipelines-deploy
 
   pr-closed:
