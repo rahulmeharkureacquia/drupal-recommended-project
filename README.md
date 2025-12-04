@@ -13,7 +13,7 @@ This project includes the following packages and configuration:
 
 ## Installation and usage
 
-Create a new project using Composer Test 2:
+Create a new project using Composer Test 3:
 ```
 composer create-project --no-interaction acquia/drupal-recommended-project
 ```
