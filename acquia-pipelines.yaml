@@ -27,7 +27,7 @@ events:
           type: script
           script:
             - 'export MD5SUM="`md5sum ~/.ssh/DECRYPTABLE_SSH_KEY`"'
-            - 'echo "Verified DECRYPTABLE_SSH_KEY is correctly encrypted.."'
+            - 'echo "Verified DECRYPTABLE_SSH_KEY is correctly encrypted..."'
             - echo "variables - $COMPOSER_BIN $SIMPLETEST_BASE_URL $API_KEY"
             - echo "Pipelines 2.0"
   post-deploy:
