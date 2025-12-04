@@ -36,7 +36,6 @@ events:
           type: deploy
           script:
             - sleep 2
-            - pipelines-deploy
   pr-merged:
     steps:
       - deploy_to_acquia:
@@ -44,7 +43,6 @@ events:
           script:
             - sleep 10
             - echo "Pr-Merged event script"
-            - pipelines-deploy
 
   pr-closed:
     steps:
@@ -53,4 +51,3 @@ events:
           script:
             - sleep 5
             - echo "Pr-closed event script"
-            - pipelines-deploy
