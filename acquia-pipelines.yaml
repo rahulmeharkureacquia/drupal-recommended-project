@@ -44,10 +44,3 @@ events:
             - sleep 10
             - echo "Pr-Merged event script"
 
-  pr-closed:
-    steps:
-      - deploy_to_acquia:
-          type: deploy
-          script:
-            - sleep 5
-            - echo "Pr-closed event script"
