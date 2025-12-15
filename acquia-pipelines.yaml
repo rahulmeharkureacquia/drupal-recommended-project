@@ -29,7 +29,7 @@ events:
             - 'export MD5SUM="`md5sum ~/.ssh/DECRYPTABLE_SSH_KEY`"'
             - 'echo "Vsdaerified DECRYPTABLE_SSH_KEY is correctly encrypted.."'
             - echo "variables - $COMPOSER_BIN $SIMPLETEST_BASE_URL $API_KEY"
-            - echo "Pipelines 2.0.123456"
+            - echo "Pipelines 2.0.1234561"
   post-deploy:
     steps:
       - deploy_to_acquia:
