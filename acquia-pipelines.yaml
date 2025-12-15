@@ -27,9 +27,9 @@ events:
           type: script
           script:
             - 'export MD5SUM="`md5sum ~/.ssh/DECRYPTABLE_SSH_KEY`"'
-            - 'echo "Verified DECRYPTABLE_SSH_KEY is correctly encrypted."'
+            - 'echo "Vsdaerified DECRYPTABLE_SSH_KEY is correctly encrypted.."'
             - echo "variables - $COMPOSER_BIN $SIMPLETEST_BASE_URL $API_KEY"
-            - echo "Pipelines 2.0"
+            - echo "Pipelines 2.0.123456"
   post-deploy:
     steps:
       - deploy_to_acquia:
@@ -44,10 +44,3 @@ events:
             - sleep 10
             - echo "Pr-Merged event script"
 
-  pr-closed:
-    steps:
-      - deploy_to_acquia:
-          type: deploy
-          script:
-            - sleep 5
-            - - echo "Pr-closed event script"
