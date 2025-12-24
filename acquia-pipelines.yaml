@@ -1,7 +1,4 @@
 version: 1.0.0
-services:
-  - php:
-     version: 8.2
 
 ssh-keys:
   DECRYPTABLE_SSH_KEY:
