@@ -35,7 +35,6 @@ events:
             - openssl md5 ./welcome.txt || echo 'OpenSSL md5 is not supported in FIPS mode.'
             - node -e "require('crypto').createHash('md5').update('')" || echo 'Node md5 is not supported in FIPS mode.'
             - php -r 'echo md5("foo");' || 'PHP md5 is not working.'
-            
             - echo "Pipelines 2.0"
   post-deploy:
     steps:
