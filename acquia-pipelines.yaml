@@ -15,6 +15,7 @@ variables:
   API_SECRET: "${decrypt:api_secret}"
   global:
     COMPOSER_BIN: $SOURCE_DIR/vendor/bin
+    ENABLE_FIPS: true
     API_KEY: 
       secure: "skjdhcfoiwejdlwekjfierjfejkfkjefojoe"
     API_SECRET: 
@@ -29,6 +30,12 @@ events:
             - 'export MD5SUM="`md5sum ~/.ssh/DECRYPTABLE_SSH_KEY`"'
             - 'echo "Verified DECRYPTABLE_SSH_KEY is correctly encrypted.."'
             - echo "variables - $COMPOSER_BIN $SIMPLETEST_BASE_URL $API_KEY"
+            - openssl_var=$([ "$OPENSSL_FIPS" == 1 ] && echo "set" || echo "not set")
+            - echo "OpenSSL_FIPS env var is $openssl_var to 1."
+            - openssl md5 ./welcome.txt || echo 'OpenSSL md5 is not supported in FIPS mode.'
+            - node -e "require('crypto').createHash('md5').update('')" || echo 'Node md5 is not supported in FIPS mode.'
+            - php -r 'echo md5("foo");' || 'PHP md5 is not working.'
+            
             - echo "Pipelines 2.0"
   post-deploy:
     steps:
