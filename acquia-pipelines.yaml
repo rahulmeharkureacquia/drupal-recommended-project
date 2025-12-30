@@ -1,7 +1,7 @@
 version: 1.3.0
-services:
-  - php:
-      version: 8.2
+variables:
+  COMPOSER_BIN: $SOURCE_DIR/vendor/bin
+  BLT_DIR: $SOURCE_DIR/vendor/acquia/blt
 events:
   build:
     steps:
